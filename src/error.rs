@@ -30,6 +30,7 @@ pub enum ClientError {
     #[error(transparent)]
     Io(#[from] tokio::io::Error),
 
+    /// Wapper of `smol::io::Error`
     #[cfg(feature = "smol")]
     #[error(transparent)]
     Io(#[from] smol::io::Error),
