@@ -30,6 +30,7 @@ use std::{
     ops::{Deref, DerefMut},
 };
 
+#[cfg(feature = "smol")]
 use bytes::BufMut;
 #[cfg(feature = "smol")]
 use smol::io::{self, AsyncRead, AsyncReadExt, AsyncWrite, AsyncWriteExt};
