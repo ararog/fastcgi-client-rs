@@ -291,8 +291,10 @@ impl BeginRequest {
     /// Converts the begin request to bytes.
     pub(crate) async fn to_content(&self) -> io::Result<Vec<u8>> {
         let mut buf: Vec<u8> = Vec::new();
+        #[cfg(feature = "smol")]
         buf.put_u16(self.role as u16);
-        //buf.write_u16(self.role as u16).await?;
+        #[cfg(feature = "tokio")]
+        buf.write_u16(self.role as u16).await?;
         buf.push(self.flags);
         buf.extend_from_slice(&self.reserved);
         Ok(buf)

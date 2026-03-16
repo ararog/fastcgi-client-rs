@@ -82,7 +82,7 @@ async fn single() {
     for _ in 0..3 {
         #[cfg(feature = "tokio")]
         let output = client
-            .execute(Request::new(params.clone(), Cursor::new(body)))
+            .execute(Request::new(params.clone(), std::io::Cursor::new(body)))
             .await
             .unwrap();
 
@@ -162,7 +162,7 @@ async fn single_stream() {
     for _ in 0..3 {
         #[cfg(feature = "tokio")]
         let mut stream = client
-            .execute_stream(Request::new(params.clone(), Cursor::new(body)))
+            .execute_stream(Request::new(params.clone(), std::io::Cursor::new(body)))
             .await
             .unwrap();
 

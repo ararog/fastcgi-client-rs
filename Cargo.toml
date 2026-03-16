@@ -24,7 +24,7 @@ readme = "README.md"
 keywords = ["fastcgi", "fcgi", "client", "tokio", "php"]
 
 [features]
-default = ["smol"]
+default = ["tokio"]
 tokio = ["tokio/io-util", "tokio/sync", "tokio/time", "tokio-util/io"]
 smol = ["dep:smol"]
 
