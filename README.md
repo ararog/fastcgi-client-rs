@@ -1,10 +1,12 @@
 # fastcgi-client-rs
 
-[![Rust](https://github.com/jmjoy/fastcgi-client-rs/actions/workflows/rust.yml/badge.svg)](https://github.com/jmjoy/fastcgi-client-rs/actions/workflows/rust.yml)
-[![Crate](https://img.shields.io/crates/v/fastcgi-client.svg)](https://crates.io/crates/fastcgi-client)
-[![API](https://docs.rs/fastcgi-client/badge.svg)](https://docs.rs/fastcgi-client)
+[![Rust](https://github.com/jmjoy/fastcgi-connect-rs/actions/workflows/rust.yml/badge.svg)](https://github.com/jmjoy/fastcgi-connect-rs/actions/workflows/rust.yml)
+[![Crate](https://img.shields.io/crates/v/fastcgi-connect.svg)](https://crates.io/crates/fastcgi-connect)
+[![API](https://docs.rs/fastcgi-connect/badge.svg)](https://docs.rs/fastcgi-connect)
 
-Fastcgi client implemented for Rust, power by [tokio](https://crates.io/crates/tokio).
+Fastcgi client implemented for Rust, power by [tokio](https://crates.io/crates/tokio) or [smol](https://crates.io/crates/smol).
+
+This crate is a fork of [fastcgi-client](https://crates.io/crates/fastcgi-client) with some improvements and bug fixes.
 
 ## Installation
 
@@ -12,7 +14,7 @@ Add dependencies to your `Cargo.toml` by `cargo add`:
 
 ```shell
 cargo add tokio --features full
-cargo add fastcgi-client
+cargo add fastcgi-connect
 ```
 
 ## Examples
@@ -20,7 +22,7 @@ cargo add fastcgi-client
 Short connection mode:
 
 ```rust, no_run
-use fastcgi_client::{Client, Params, Request};
+use fastcgi_connect::{Client, Params, Request};
 use std::env;
 use tokio::{io, net::TcpStream};
 
@@ -68,7 +70,7 @@ async fn main() {
 Keep alive mode:
 
 ```rust, no_run
-use fastcgi_client::{Client, Params, Request};
+use fastcgi_connect::{Client, Params, Request};
 use std::env;
 use tokio::{io, net::TcpStream};
 
@@ -97,4 +99,4 @@ async fn main() {
 
 ## License
 
-[Apache-2.0](https://github.com/jmjoy/fastcgi-client-rs/blob/master/LICENSE).
+[Apache-2.0](https://github.com/jmjoy/fastcgi-connect-rs/blob/master/LICENSE).

@@ -13,9 +13,9 @@
 # limitations under the License.
 
 [package]
-name = "fastcgi-client"
-version = "0.10.0"
-authors = ["jmjoy <jmjoy@apache.org>"]
+name = "fastcgi-connect"
+version = "0.1.0"
+authors = ["jmjoy <jmjoy@apache.org>", "rogerio <rogerio.araujo@gmail.com>"]
 edition = "2021"
 description = "Fastcgi client implemented for Rust."
 repository = "https://github.com/jmjoy/fastcgi-client-rs"

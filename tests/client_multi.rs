@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use fastcgi_client::{request::Request, response::Content, Client, Params};
+use fastcgi_connect::{request::Request, response::Content, Client, Params};
 use std::env::current_dir;
 
 #[cfg(feature = "smol")]

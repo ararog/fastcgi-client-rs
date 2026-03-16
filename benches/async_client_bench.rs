@@ -16,10 +16,18 @@
 
 extern crate test;
 
-use fastcgi_client::{conn::KeepAlive, request::Request, Client, Params};
+use fastcgi_connect::{conn::KeepAlive, request::Request, Client, Params};
 use std::env::current_dir;
 use test::Bencher;
+
+#[cfg(feature = "tokio")]
 use tokio::{
+    io::{self, AsyncRead, AsyncWrite},
+    net::TcpStream,
+};
+
+#[cfg(feature = "smol")]
+use smol::{
     io::{self, AsyncRead, AsyncWrite},
     net::TcpStream,
 };
