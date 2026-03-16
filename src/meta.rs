@@ -188,10 +188,16 @@ impl Header {
         let mut buf: Vec<u8> = Vec::new();
         buf.push(self.version);
         buf.push(self.r#type as u8);
-        buf.put_u16(self.request_id);
-        buf.put_u16(self.content_length);
-        //buf.write_u16(self.request_id).await?;
-        //buf.write_u16(self.content_length).await?;
+        #[cfg(feature = "smol")]
+        {
+            buf.put_u16(self.request_id);
+            buf.put_u16(self.content_length);
+        }
+        #[cfg(feature = "tokio")]
+        {
+            buf.write_u16(self.request_id).await?;
+            buf.write_u16(self.content_length).await?;
+        }
         buf.push(self.padding_length);
         buf.push(self.reserved);
 
