@@ -26,9 +26,9 @@ use crate::{
     response::ResponseStream,
     ClientError, ClientResult, Response,
 };
-use std::marker::PhantomData;
 #[cfg(feature = "smol")]
 use smol::io::{AsyncRead, AsyncWrite, AsyncWriteExt};
+use std::marker::PhantomData;
 #[cfg(feature = "tokio")]
 use tokio::io::{AsyncRead, AsyncWrite, AsyncWriteExt};
 use tracing::debug;
@@ -274,7 +274,7 @@ impl<S: AsyncRead + AsyncWrite + Unpin, M: Mode> Client<S, M> {
         let mut empty = smol::io::empty();
         #[cfg(feature = "tokio")]
         let mut empty = tokio::io::empty();
-        
+
         Header::write_to_stream_batches(
             RequestType::Stdin,
             id,

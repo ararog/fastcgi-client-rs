@@ -33,7 +33,7 @@ use tokio::io::AsyncRead;
 use tokio_util::io::ReaderStream;
 
 #[cfg(feature = "smol")]
-use smol::io::{Bytes as ReaderStream, AsyncRead, AsyncReadExt};
+use smol::io::{AsyncRead, AsyncReadExt, Bytes as ReaderStream};
 
 use tracing::debug;
 

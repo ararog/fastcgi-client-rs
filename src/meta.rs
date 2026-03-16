@@ -387,7 +387,7 @@ impl ParamLength {
                 buf.put_u32(l);
                 #[cfg(feature = "tokio")]
                 buf.write_u32(l).await?;
-            },
+            }
         }
         Ok(buf)
     }

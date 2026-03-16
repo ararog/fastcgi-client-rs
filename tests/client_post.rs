@@ -18,7 +18,7 @@ use std::{env::current_dir, time::Duration};
 #[cfg(feature = "smol")]
 use macro_rules_attribute::apply;
 #[cfg(feature = "smol")]
-use smol::{net::TcpStream};
+use smol::net::TcpStream;
 #[cfg(feature = "smol")]
 use smol_timeout::TimeoutExt;
 

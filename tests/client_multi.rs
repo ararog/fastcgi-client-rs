@@ -17,10 +17,10 @@ use std::env::current_dir;
 
 #[cfg(feature = "smol")]
 use macro_rules_attribute::apply;
-#[cfg(feature = "tokio")]
-use tokio::net::TcpStream;
 #[cfg(feature = "smol")]
 use smol::net::TcpStream;
+#[cfg(feature = "tokio")]
+use tokio::net::TcpStream;
 
 use futures_util::stream::StreamExt;
 
@@ -85,7 +85,7 @@ async fn single() {
             .execute(Request::new(params.clone(), Cursor::new(body)))
             .await
             .unwrap();
-            
+
         #[cfg(feature = "smol")]
         let output = client
             .execute(Request::new(params.clone(), smol::io::Cursor::new(body)))
@@ -165,7 +165,7 @@ async fn single_stream() {
             .execute_stream(Request::new(params.clone(), Cursor::new(body)))
             .await
             .unwrap();
-            
+
         #[cfg(feature = "smol")]
         let mut stream = client
             .execute_stream(Request::new(params.clone(), smol::io::Cursor::new(body)))
