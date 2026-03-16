@@ -69,7 +69,10 @@ impl<S: AsyncRead + AsyncWrite + Unpin> Client<S, ShortConn> {
     ///
     /// ```
     /// use fastcgi_connect::{response::Content, Client, Params, Request, StreamExt};
+    /// #[cfg(feature = "tokio")]
     /// use tokio::{io, net::TcpStream};
+    /// #[cfg(feature = "smol")]
+    /// use smol::{io, net::TcpStream};
     ///
     /// async fn stream() {
     ///     let stream = TcpStream::connect(("127.0.0.1", 9000)).await.unwrap();
@@ -122,7 +125,10 @@ impl<S: AsyncRead + AsyncWrite + Unpin> Client<S, KeepAlive> {
     ///
     /// ```
     /// use fastcgi_connect::{response::Content, Client, Params, Request, StreamExt};
+    /// #[cfg(feature = "tokio")]
     /// use tokio::{io, net::TcpStream};
+    /// #[cfg(feature = "smol")]
+    /// use smol::{io, net::TcpStream};
     ///
     /// async fn stream() {
     ///     let stream = TcpStream::connect(("127.0.0.1", 9000)).await.unwrap();
