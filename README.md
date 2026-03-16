@@ -1,6 +1,6 @@
 # fastcgi-client-rs
 
-[![Rust](https://github.com/jmjoy/fastcgi-connect-rs/actions/workflows/rust.yml/badge.svg)](https://github.com/jmjoy/fastcgi-connect-rs/actions/workflows/rust.yml)
+[![Rust](https://github.com/ararog/fastcgi-connect-rs/actions/workflows/rust.yml/badge.svg)](https://github.com/ararog/fastcgi-connect-rs/actions/workflows/rust.yml)
 [![Crate](https://img.shields.io/crates/v/fastcgi-connect.svg)](https://crates.io/crates/fastcgi-connect)
 [![API](https://docs.rs/fastcgi-connect/badge.svg)](https://docs.rs/fastcgi-connect)
 
