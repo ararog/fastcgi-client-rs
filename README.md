@@ -24,7 +24,10 @@ Short connection mode:
 ```rust, no_run
 use fastcgi_connect::{Client, Params, Request};
 use std::env;
+#[cfg(feature = "tokio")]
 use tokio::{io, net::TcpStream};
+#[cfg(feature = "smol")]
+use smol::{io, net::TcpStream};
 
 #[tokio::main]
 async fn main() {
@@ -72,7 +75,10 @@ Keep alive mode:
 ```rust, no_run
 use fastcgi_connect::{Client, Params, Request};
 use std::env;
+#[cfg(feature = "tokio")]
 use tokio::{io, net::TcpStream};
+#[cfg(feature = "smol")]
+use smol::{io, net::TcpStream};
 
 #[tokio::main]
 async fn main() {
