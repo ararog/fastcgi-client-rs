@@ -46,8 +46,8 @@ jobs:
     - name: Clippy
       run: cargo clippy --release
     - name: Test (Tokio)
-      run: cargo test --features tokio --release
+      run: cargo test --features tokio --release --no-default-features
     - name: Test (Smol)
-      run: cargo test --features smol --release
+      run: cargo test --features smol --release --no-default-features
     - name: Doc
       run: cargo rustdoc --release
